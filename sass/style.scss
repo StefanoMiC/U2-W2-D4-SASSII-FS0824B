@@ -1,0 +1,65 @@
+@import "./partials/functions";
+
+$font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$padding-normal: 30px;
+
+body {
+  margin: 0;
+  font-family: $font;
+}
+
+.box {
+  vertical-align: top;
+}
+
+.box:first-of-type {
+  display: inline-block;
+  width: dynamicSize(200px, $padding-normal);
+  height: dynamicSize(200px, $padding-normal);
+  padding: $padding-normal;
+  overflow: hidden;
+}
+.box:nth-of-type(2) {
+  display: inline-block;
+  min-width: dynamicSize(200px, $padding-normal);
+  min-height: dynamicSize(200px, $padding-normal);
+  padding: $padding-normal;
+  overflow: visible;
+}
+
+.long-shadow {
+  h2 {
+    text-align: center;
+    font: {
+      size: 66px;
+      weight: 900;
+      family: $font;
+    }
+    color: palegreen;
+    letter-spacing: -2px;
+    text-shadow: createLongShadow(black, 200);
+  }
+}
+
+$border-colors: red, green, blue, yellow, purple, coral, crimson, palevioletred;
+.multiple-borders {
+  margin-block: 20rem;
+  & > div {
+    width: 200px;
+    height: 200px;
+    margin-inline: auto;
+    background-color: rgb(30, 30, 30);
+    box-shadow: createMultipleBorders($border-colors);
+  }
+}
+
+.multiple-borders-steps {
+  margin-block: 20rem;
+  & > div {
+    width: 200px;
+    height: 200px;
+    margin-inline: auto;
+    background-color: rgb(30, 30, 30);
+    box-shadow: createMultipleBordersSteps(palegreen, 20);
+  }
+}
